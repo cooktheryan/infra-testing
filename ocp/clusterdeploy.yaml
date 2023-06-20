@@ -1,0 +1,31 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  labels:
+    cloud: AWS
+    cluster.open-cluster-management.io/clusterset: default
+    hive.openshift.io/cluster-platform: aws
+    hive.openshift.io/cluster-region: us-west-1
+    region: us-west-1
+    vendor: OpenShift
+  name: test-sigstore
+  namespace: test-sigstore
+spec:
+  baseDomain: octo-emerging.redhataicoe.com
+  clusterName: test-sigstore
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: 1
+  installed: false
+  platform:
+    aws:
+      credentialsSecretRef:
+        name: test-sigstore-aws-creds
+      region: us-west-1
+  provisioning:
+    imageSetRef:
+      name: img4.13.3-multi-appsub
+    installConfigSecretRef:
+      name: test-sigstore-install-config
+  pullSecretRef:
+    name: test-sigstore-pull-secret
