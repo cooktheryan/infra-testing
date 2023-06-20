@@ -3,7 +3,6 @@ kind: ClusterDeployment
 metadata:
   labels:
     cloud: AWS
-    cluster.open-cluster-management.io/clusterset: default
     hive.openshift.io/cluster-platform: aws
     hive.openshift.io/cluster-region: us-west-1
     region: us-west-1
