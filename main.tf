@@ -21,10 +21,14 @@
    }
  }
 
+provider "aws" {
+  region = "us-east-1"
+}
+
 // Launch aws instance using ami-007cf291af489ad4d then connect to it using ssh and install podman
 resource "aws_instance" "rcook" {
-  ami           = "ami-0ac94c9bfed423e5e"
-  instance_type = "t4g.medium"
+  ami           = "ami-026ebd4cfe2c043b2"
+  instance_type = "m5.xlarge"
   key_name      = aws_key_pair.generated_key.key_name
   provisioner "remote-exec" {
     inline = [
