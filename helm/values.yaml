@@ -6,7 +6,7 @@ rekor:
         route.openshift.io/termination: "edge"
       hosts:
       # replace with cluster domain
-        - host: rekor.<replace with cluster domain>
+        - host: rekor.DOMAIN
           path: /
 
 
